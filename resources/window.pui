@@ -10,12 +10,23 @@ SetContext(Window)
     SetArg(Window.drag.titleth, 20px) //titleth = dragable title from top, height is 20px
 
     // gets calculated into height and width
-    SetArg(Window.content.area,
+    SetArg(Window.content.area, Array(
         WindowTitleHeight, // top
         1px, // right
         1px, // bottom
         1px  // left
-    )
+    ))
+
+    Container(
+        ID("window.content"),
+        Style(
+            width(fill),
+            height(fill)
+            bg(WindowContentColor)
+        )
+    ){
+        //
+    }
 
     Container(
         ID("window.decorations"),
