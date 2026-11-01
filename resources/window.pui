@@ -21,7 +21,7 @@ SetContext(Window)
         ID("window.content"),
         Style(
             width(fill),
-            height(fill)
+            height(fill),
             bg(WindowContentColor)
         )
     ){
