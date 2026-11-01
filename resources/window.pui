@@ -2,32 +2,34 @@ Import "config.pui"
 
 SetContext(Window)
 {
-    //defaults
-    SetArg(Window.height, "384")
-    SetArg(Window.width, "1280")
-
-    SetArg(Window.title, "swindow")
+    //window data comes from the wm, the config only describes its ui
     SetArg(Window.drag.titleth, 20px) //titleth = dragable title from top, height is 20px
 
     // gets calculated into height and width
     SetArg(Window.content.area, Array(
         WindowTitleHeight, // top
-        1px, // right
-        1px, // bottom
-        1px  // left
+        3px, // right
+        3px, // bottom
+        3px  // left
     ))
 
     Container(
-        ID("window.content"),
         Style(
             width(fill),
             height(fill),
-            bg(WindowContentColor)
+            padding(3px), //each side
+            bg(WindowTitleColor)
         )
     ){
-        //
+        Container(
+            Style(
+                width(fill),
+                height(fill),
+                bg(WindowContentColor)
+            )
+        )
     }
-
+    
     Container(
         ID("window.decorations"),
         Style(
